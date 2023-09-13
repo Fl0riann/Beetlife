@@ -1,31 +1,40 @@
 import random
 
-sexe = ["Homme", "Femme"]
+age = 0
 
-prenom_masculin = ["Louis","Abdoul","Clément","Pierre","Gaston",
+argent = 0
+
+SEXES = ["Homme", "Femme"]
+sexe = random.choice(SEXES)
+
+PRENOM_MASCULIN = ["Louis","Abdoul","Clément","Pierre","Gaston",
                    "Mathis","Alexendre","Loïc","Philippe","Pedro",
                    "Frédéric","André","Carl","Thomas","Mathieu",
                    "John","IbrahimbapenMohamedAlMustapha"]
 
-prenom_feminin = ["Inès","Romane","Valentine","coralie","Marie-France",
+PRENOM_FEMININ = ["Inès","Romane","Valentine","coralie","Marie-France",
                   "Nathalie","Anne","Christine","Stéphanie","Léa",
                   "Catherine","Aya","Isabelle","Geronima","Patricia",
                   "Emmy","Fatima"]
 
-nom = ["Murphy"]
+if sexe == "Homme":
+    prenom = random.choice(PRENOM_MASCULIN)
+else:
+    prenom = random.choice(PRENOM_FEMININ)
 
-talent = ["rien","sportif","chant","acteur","criminel","politique"]
+NOMS = ["Murphy"]
 
-pays = {"France":["Paris","Toulouse","Marseille"]}
+nom = random.choice(NOMS)
 
-age = (0)
+TALENTS = ["rien","sportif","chant","acteur","criminel","politique"]
 
-argent = (0)
+talent = random.choices(TALENTS,weights=(0.5,0.1,0.1,0.1,0.1,0.1))
 
-print(age +1, random.choice(list(prenom_feminin)))
-print(random.choices(list(talent),weights=(0.5,0.1,0.1,0.1,0.1,0.1)))
-for valeur in pays.values():
-    print(valeur[0])
+lieux = {"France":["Paris","Toulouse","Marseille"],
+        "Angleterre":["Londre"],}
 
+pays = random.choice(list(lieux.keys())) 
+ville = random.choice(lieux[pays])  
 
-
+print("Pays:", pays)
+print("Ville:", ville)
